@@ -1,0 +1,79 @@
+* {
+	padding:0px;
+	margin:0px;
+	box-sizing:border-box;
+}
+
+body {
+	background:#2E170B;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content:center;
+	height: 100vh
+}
+
+#name {
+	color: #FFFFFF;
+	background: #333333;
+	text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+button {
+	border: none; 
+	width:245px;
+	margin-bottom: 80px;
+	background: orange; 
+	color:white;
+	cursor:pointer;
+	padding: 10px 6px;
+	border-radius: 10px;
+	outline: none
+}
+
+button:hover {
+	-webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+	box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#printHere {
+	width: 245px;
+	height: 245px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden; /* cache ce qui dépasse */
+	border-radius: 12px; /* optionnel: arrondi plus propre */
+	background: #111; /* optionnel: fond neutre */
+}
+
+
+img {
+	opacity: 0;
+	transform: scale(0.9) translateY(10px);
+	animation: fadeInScale 0.1s ease forwards;
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* garde les proportions sans déformation */
+	image-rendering: auto; /* laisse le navigateur gérer la qualité */
+}
+/* Animation principale */
+@keyframes fadeInScale {
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* Variante quand tu veux un effet de disparition douce */
+.fade-out {
+  animation: fadeOut 0.1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+}
